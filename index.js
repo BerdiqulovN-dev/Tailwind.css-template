@@ -82,10 +82,11 @@ elSelect.addEventListener("change", (evt) => {
 elSearch.addEventListener("keyup", (evt) => {
 	evt.preventDefault();
 	let value = evt.target.value;
+	list.innerHTML = "";
 
 	const newItem = pokemons.filter((item) => {
 		return item.name.includes(value);
 	});
 	console.log(newItem);
-
+	renderUi(newItem);
 });
